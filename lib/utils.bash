@@ -42,8 +42,7 @@ download_release() {
 	filename="$2"
 
 	# TODO: Adapt the release URL convention for trippy
-	url="$GH_REPO/archive/v${version}.tar.gz"
-
+	url="$GH_REPO/releases/download/${version}/trippy-${version}-x86_64-unknown-linux-gnu.tar.gz"
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
